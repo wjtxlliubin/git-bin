@@ -17,12 +17,13 @@
                         socket.on('connect', function () {
 
                             socket.emit('my event', {data: v});
+                            location.reload()
                             socket.on('my other event', function (data) {
-{#                                if(document.getElementById("target").onclick()){#}
+                                if(document.getElementById("target").onclick()){
 
                                     socket.emit('my event', {data: v});
                                     console.log(data);
-{#                                }#}
+                                }
 
                              });
 
