@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>下载项目</title>
+    <link rel="icon" href="0002.jpeg">
+    <link rel="stylesheet" href="bootstrap-3.3.6/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+            <div class="container" style="position:absolute;top:20%; left:20%; ">
+                    <div class="row clearfix">
+                        <div class="col-md-4 column">
+                        </div>
+                        <div class="col-md-4 column">
+                            <img src="0002.jpeg" alt="" class="img-thumbnail">
+                        </div>
+                        <div class="col-md-4 column">
+                        </div>
+	                </div>
+                    <div class="row clearfix">
+                        <div class="col-md-12 column" >
+                            <form action="/download" method="post" >
+                                <input id="url" type="text" class="form-control" name="url"/>
+                                <button id="target" type="submit" class="btn btn-success" style="position:absolute;top:0%; left:100%; ">
+                                <span class="glyphicon glyphicon-star"></span>Send
+                                </button>
+                            </form>
+                            </div>
+                    </div>
+            </div>
+
+
+
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="bootstrap-3.3.6／dist/js/bootstrap.min.js"></script>
+    <script>
+            obj1 = setInterval("Go()",1000);
+            function Go(){
+                var content = document.title;
+                var firstChar = content.charAt(0)
+                var sub = content.substring(1,content.length)
+                document.title = sub + firstChar;
+            }
+
+     </script>
+</body>
+</html>

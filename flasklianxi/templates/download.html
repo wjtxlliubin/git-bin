@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" href="0002.jpeg">
+
+</head>
+<body>
+<div style="position:absolute;top:40%; left:40%; ">
+    <h1>{{ message }}</h1>
+</div>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('connect', function () {
+        socket.emit('my event', {'key': '{{ key }}'});
+        socket.on('{{ key }}', function (from, msg) {
+            console.log('I received a private message by ', from, ' saying ', msg);
+            if (typeof(from) != undefined && 'url' in from) {
+                window.location = decodeURIComponent(from.url).replace('+', ' ');
+            }
+        });
+    });
+    </script>
+</body>
+</html>
